@@ -25,10 +25,16 @@ hash_arr.each { |e|
 		if keys.size == 0
 			yaml[y_key] = value
 			return
-		else
-			yaml[y_key] = Hash.new if yaml[y_key] == nil
-			to_yamls keys, value, yaml[y_key]
 		end
+
+		yaml[y_key]= Hash.new if yaml[y_key] == nil
+
+		unless yaml[y_key].is_a? Hash
+			temp_value = yaml[y_key]
+			yaml[y_key] = { "text" => temp_value }
+		end
+
+		to_yamls keys, value, yaml[y_key]
 	end
 
 	to_yamls yaml_keys, e[:value], yaml
