@@ -1,1 +1,1 @@
-gem 'yaml'
+source 'https://rubygems.org'
