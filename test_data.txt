@@ -1,0 +1,2 @@
+home.map.headline=Find properties across the world
+home.map.subheadline=Please select a country from the map above
